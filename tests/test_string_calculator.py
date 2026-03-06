@@ -14,6 +14,10 @@ def test_empty_string_returns_zero():
     "5",
     "123",
     "9999",
+    "004",
+    " 42 ",
+    " 42",
+    "42 "
 ])
 def test_single_number_returns_value(value: str) -> None:
     calc = StringCalculator()
@@ -29,3 +33,13 @@ def test_single_number_returns_value(value: str) -> None:
 def test_two_numbers_comma_delimited_return_sum(num1: int, num2: int) -> None:
     calc = StringCalculator()
     assert calc.calculate(f"{num1},{num2}") == num1 + num2
+
+@pytest.mark.parametrize("num1,num2", [
+    (0, 0),
+    (-4, -2),
+    (10, 0),
+    (123, 456),
+])
+def test_two_numbers_newline_delimited_return_sum(num1: int, num2: int) -> None:
+    calc = StringCalculator()
+    assert calc.calculate(f"{num1}\n{num2}") == num1 + num2
