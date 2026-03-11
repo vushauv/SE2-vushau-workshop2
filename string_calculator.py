@@ -3,6 +3,20 @@ class StringCalculator:
    def calculate(self, input_string: str) -> int:
       if not input_string:
          return 0
+      
+      delimiter=","
+      
+      if input_string.startswith("//"):
+         try:
+               header, input_string = input_string.split("\n", 1)
+               delimiter = header[3]
+               if delimiter == "":
+                  raise ValueError
+         except Exception:
+               raise ValueError
+
+      input_string = input_string.replace(delimiter, "\n")
+      input_string = input_string.replace(",", "\n")
 
       input_string = input_string.replace(",","\n")
       numbers: list[str] = input_string.split("\n")
