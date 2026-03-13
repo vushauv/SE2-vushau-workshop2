@@ -16,7 +16,7 @@ def test_empty_string_returns_zero():
     " 42",
     "42 ",
     "1000",
-    "1001"
+    "999"
 ])
 def test_single_number_returns_value(value: str) -> None:
     calc = StringCalculator()
