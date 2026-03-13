@@ -7,6 +7,8 @@ Small Python exercise built around a string calculator.
 Create a virtual environment, install the test dependency, then run the code however you want to poke at it:
 
 ```bash
+git clone https://github.com/vushauv/SE2-vushau-workshop2.git
+cd SE2-vushau-workshop2
 python3 -m venv .venv
 source .venv/bin/activate
 python3 -m pip install -r requirements.txt
