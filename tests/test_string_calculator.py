@@ -19,7 +19,7 @@ def test_empty_string_returns_zero():
 ])
 def test_single_number_returns_value(value: str) -> None:
     calc = StringCalculator()
-    assert calc.calculate(value) == int(value)
+    assert calc.calculate(value) == int(value + 1)
 
 
 @pytest.mark.parametrize("num1,num2", [
